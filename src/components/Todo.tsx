@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Plus, Pencil, Trash2, X, Check } from "lucide-react"
+import { Plus, Pencil, Trash2, Check } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Checkbox } from "@/components/ui/checkbox"
@@ -13,7 +13,6 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from "@/components/ui/dialog"
 
 interface Todo {
@@ -38,6 +37,7 @@ export default function TodoApp() {
     const stored = localStorage.getItem(STORAGE_KEY)
     if (stored) {
       try {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setTodos(JSON.parse(stored))
       } catch (e) {
         console.error("Failed to parse todos:", e)

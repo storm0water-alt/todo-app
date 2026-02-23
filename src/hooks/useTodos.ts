@@ -20,6 +20,7 @@ export function useTodos() {
     const stored = localStorage.getItem(STORAGE_KEY)
     if (stored) {
       try {
+  // eslint-disable-next-line react-hooks/set-state-in-effect
         setTodos(JSON.parse(stored))
       } catch {
         setTodos([])
