@@ -1,6 +1,6 @@
-import dynamic from 'next/dynamic'
+import Todo from "@/components/Todo"
 
-const Todo = dynamic(() => import('@/components/Todo'), { ssr: false })
+export const dynamic = 'force-dynamic'
 
 export default function Home() {
   return <Todo />
